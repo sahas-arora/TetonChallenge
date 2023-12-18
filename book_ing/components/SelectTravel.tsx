@@ -25,16 +25,9 @@ export const SelectTravel = ({ navigation }: { navigation: any }) => {
   const [openStart, setOpenStart] = useState<boolean>(false);
   const [openEnd, setOpenEnd] = useState<boolean>(false);
   
-  // React.useEffect(() => {
-  //   if (isReturnFlight && departureAirport && !)
-  // }, []);
-
-
   React.useEffect(() => {
       setSelectedFlights([]);
   }, []);
-
-  console.log("Booked flights rn : ", arriveDate);
 
   const navToFlights = React.useCallback(() => {
     return navigation.navigate("Flights", {
@@ -97,8 +90,8 @@ export const SelectTravel = ({ navigation }: { navigation: any }) => {
         </View>
 
         {bookedFlights.length ? (
-        <TouchableOpacity onPress={navToBookings}>
-          <Text>
+        <TouchableOpacity onPress={navToBookings} style={{ backgroundColor: "rgba(221, 242, 253, 0.5)", borderRadius: 10 }}>
+          <Text style={{ fontSize: 20, padding: 10 }}>
             Existing Bookings
           </Text>
         </TouchableOpacity>
@@ -133,16 +126,16 @@ export const SelectTravel = ({ navigation }: { navigation: any }) => {
 
           </Text>
           <View style={{ flexDirection: 'row', justifyContent: "space-around" }}>
-            <RNDateTimePicker textColor="#DDF2FD" placeholderText={'Depart'} maximumDate={new Date(2023, 9, 4)} minimumDate={new Date(2023, 9, 1)} mode="date" value={departDate} onChange={handleDepartureDateUpdate} />
+            <RNDateTimePicker textColor="#DDF2FD" placeholderText={'Depart'} maximumDate={new Date(2023, 8, 4)} minimumDate={new Date(2023, 8, 1)} mode="date" value={departDate} onChange={handleDepartureDateUpdate} style={{ marginTop: 30}} />
             {
               isReturnFlight &&
-              <RNDateTimePicker placeholderText={'Return'} maximumDate={new Date(2023, 9, 4)} minimumDate={new Date(2023, 9, 1)} mode="date" value={arriveDate} onChange={handleArrivalDateUpdate} />
+              <RNDateTimePicker style={{ marginTop: 30}}  placeholderText={'Return'} maximumDate={new Date(2023, 8, 4)} minimumDate={new Date(2023, 8, 1)} mode="date" value={arriveDate} onChange={handleArrivalDateUpdate} />
             }
           </View>
         </View>
 
         
-        <View style={{ }}>
+        <View>
           <Text style={styles.text}>
             Return 
           </Text>

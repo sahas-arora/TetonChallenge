@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, FlatList, StyleSheet, Text, View } from "react-native";
+import { Button, FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { IData } from "../App";
 import { defaultFlightContext, useFlightContext } from "../context/FlightContext";
 import { FlightList } from "./FlightList";
@@ -27,7 +27,11 @@ export const BookingSummary = ({ navigation }: { navigation: any }) => {
     return (
     <View style={styles.pageContainer}>
         <FlightList title={'Summary'} data={selectedFlights} onContinue={() => {}} />
-        <Button title="Book" onPress={navToHome}  />
+        <TouchableOpacity style={{ width: 100, height: 40, alignItems: "center",alignSelf: 'center', backgroundColor: '#9BBEC8', borderRadius: 10, }} onPress={navToHome}>
+            <Text style={styles.text}>
+                Book
+            </Text>
+        </TouchableOpacity>
     </View>
     );
 };
@@ -39,6 +43,12 @@ const styles = StyleSheet.create({
       flexDirection: "column",
       justifyContent: "space-around",
       flex: 1
+    },
+    text: {
+        color: 'white',
+        // fontFamily: 'Coc'
+        fontSize: 15,
+        padding: 10
     }
   });
   

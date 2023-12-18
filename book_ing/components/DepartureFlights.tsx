@@ -12,7 +12,7 @@ import { useFlightContext } from "../context/FlightContext";
 import data from "../data.json";
 import { FlightList } from "./FlightList";
 
-export const Flights = ({ navigation }: { navigation: any}) => {
+export const DepartingFlight = ({ navigation }: { navigation: any}) => {
   const { flightFilter, setSelectedFlights, selectedFlights} = useFlightContext();
   const { returnAirport, departureAirport, isReturnFlight, departDate } = flightFilter;
 

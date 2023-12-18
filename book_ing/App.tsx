@@ -6,7 +6,7 @@
  */
 import React from "react";
 
-import { Flights } from "./components/Flights";
+import { DepartingFlight } from "./components/DepartureFlights";
 import {
   NavigationContainer,
   NavigatorScreenParams,
@@ -18,7 +18,7 @@ import {
 } from "@react-navigation/native-stack";
 import { SelectTravel } from "./components/SelectTravel";
 import { FlightContextProvider } from "./context/FlightContext";
-import { ReturnTickets } from "./components/ReturnTickets";
+import { ArrivalFlight } from "./components/ArrivalFlights";
 import { BookingSummary } from "./components/BookingSummary";
 import { Bookings } from "./components/Bookings";
 
@@ -67,7 +67,7 @@ function App(): React.JSX.Element {
             options={{
               headerShown: false,
             }}
-            component={Flights}
+            component={DepartingFlight}
           />
 
           <Stack.Screen
@@ -75,7 +75,7 @@ function App(): React.JSX.Element {
             options={{
               headerShown: false,
             }}
-            component={ReturnTickets}
+            component={ArrivalFlight}
           />
 
           <Stack.Screen

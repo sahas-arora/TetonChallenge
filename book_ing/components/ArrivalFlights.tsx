@@ -8,7 +8,7 @@ import data from "../data.json";
 import { FlightList } from "./FlightList";
 
 
-export const ReturnTickets = ({ navigation }: { navigation: any }): JSX.Element => {
+export const ArrivalFlight = ({ navigation }: { navigation: any }): JSX.Element => {
     const { flightFilter, selectedFlights, setFlightFilter, setSelectedFlights} = useFlightContext();
     const { airline, arriveDate, departureAirport, departDate, flightId, returnAirport } = flightFilter;
 
